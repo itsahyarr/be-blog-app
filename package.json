@@ -4,7 +4,8 @@
   "description": "Tugas Backend - STECHOQ",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [
     "Node.js",
@@ -13,7 +14,11 @@
   "author": "Muhammad Ahyaruddin",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "date-and-time": "^2.4.1",
     "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
     "mariadb": "^3.0.1"
   },
   "repository": {

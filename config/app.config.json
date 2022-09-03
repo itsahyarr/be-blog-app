@@ -1,0 +1,13 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "root",
+    "database": "praktik_be_stechoq"
+  },
+  "jwt": {
+    "secret": "m-ahyaruddin-secret",
+    "expired": 1800000
+  } 
+}
