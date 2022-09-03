@@ -29,7 +29,7 @@ BlogController.get('/detail', userSession, async (req, res, next) => {
  * Add Article / Blog Post
  * @param {number} user_id
  * @param {string} title
- * @param {string} post
+ * @param {string} article
  */
 BlogController.post('/', userSession, async (req, res, next) => {
   // req.body req.param req.query
@@ -41,7 +41,7 @@ BlogController.post('/', userSession, async (req, res, next) => {
  * Edit Article
  * @param {number} id
  * @param {string} title
- * @param {string} post
+ * @param {string} article
  */
 BlogController.put('/', userSession, async (req, res, next) => {
   const edit = m$blog.editPost(req.body)

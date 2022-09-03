@@ -166,7 +166,7 @@ class _blog {
   addArticle = async (body) => {
     try {
       const schema = Joi.object({
-        username: Joi.string().required(),
+        user_id: Joi.number().required(),
         title: Joi.string().required(),
         article: Joi.string()
       })
@@ -181,7 +181,7 @@ class _blog {
       }
       const add = await mysql.query(
         'INSERT INTO d_blog_post (user_id, title, post) VALUES (?, ?, ?)',
-        [body.username, body.title, body.article]
+        [body.user_id, body.title, body.article]
       )
       return {
         status: true,
