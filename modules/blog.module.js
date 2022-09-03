@@ -201,9 +201,9 @@ class _blog {
     try {
       const schema = Joi.object({
         id: Joi.number().required(),
+        user_id: Joi.number().required(),
         title: Joi.string(),
-        user_id: Joi.string(),
-        article: Joi.string()
+        article: Joi.string(),
       })
       const validation = schema.validate(body)
       if (validation.error) {
@@ -215,8 +215,8 @@ class _blog {
         }
       }
       const edit = await mysql.query(
-        'UPDATE d_blog_post SET title = ?, post = ?, user_id = ? WHERE id = ?',
-        [body.title, body.article, body.user_id, body.id]
+        'UPDATE d_blog_post SET title = ?, post = ? WHERE id = ? AND user_id = ?',
+        [body.title, body.article, body.id, body.user_id ]
       )
       return {
         status: true,

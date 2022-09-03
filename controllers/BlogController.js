@@ -40,6 +40,7 @@ BlogController.post('/', userSession, async (req, res, next) => {
 /**
  * Edit Article
  * @param {number} id
+ * @param {number} user_id
  * @param {string} title
  * @param {string} article
  */
