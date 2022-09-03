@@ -61,7 +61,7 @@ class _auth {
         }
       }
     } catch (err) {
-      console.error('Login auth module error : ',err);
+      console.error('Login auth module error : ', err);
       return {
         status: false,
         err

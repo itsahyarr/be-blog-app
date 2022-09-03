@@ -20,6 +20,21 @@ class _response {
       return false;
     }
   }
+
+  errorHandler = (err, req, res, next) => {
+    if (err.name === 'UnauthorizedError') {
+      // Error jwt
+      return res.status(401).send({
+        status: false,
+        error: 'Invalid Token'
+      })
+    }
+    // Default error handling
+    return res.status(500).send({
+      status: false,
+      error: err.message
+    })
+  }
 }
 
 module.exports = new _response();
